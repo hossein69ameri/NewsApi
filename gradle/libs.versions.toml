@@ -1,0 +1,148 @@
+############################################################################################################################################################################
+############################################################################################################################################################################
+[versions]
+projectApplicationId = "com.ameri.newsapi"
+projectVersionName = "1.0"
+projectMinSdkVersion = "23"
+projectTargetSdkVersion = "34"
+projectCompileSdkVersion = "34"
+projectVersionCode = "1"
+
+#Root
+agp = "8.4.1"
+kotlin = "1.9.0"
+coreKtx = "1.10.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.9.0"
+composeBom = "2023.08.00"
+
+#Ktlint
+kotlinter = "3.16.0"
+
+#DI
+hilt = "2.48"
+androidHiltCompiler = "1.0.0"
+hiltNavigationCompose = "1.0.0"
+hiltWork = "1.0.0"
+
+#Animation
+lottieAnimation = "6.1.0"
+
+#Lifecycle
+lifeCycle = "2.6.2"
+lifeCycleViewModelKtx = "2.6.2"
+lifeCycleRuntimeCompose = "2.6.2"
+
+#Navigation
+navigationCompose = "2.7.4"
+
+#Network
+retrofit = "2.9.0"
+loggingInterceptor = "4.11.0"
+chucker = "3.5.2"
+kotlinx-serialization = "1.6.0"
+kotlinx-serialization-converter = "1.0.0"
+
+#Coil
+composeCoil = "2.2.2"
+
+#Detect
+detekt = "1.23.1"
+
+#Coroutine
+coroutinesCore = "1.7.3"
+
+#Work Runtime
+workRuntimeKtx = "2.8.1"
+
+
+
+############################################################################################################################################################################
+############################################################################################################################################################################
+[libraries]
+#Root
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+#Ktlint
+ktlint-kotlinter = { group = "org.jmailen.gradle", name = "kotlinter-gradle", version.ref = "kotlinter" }
+
+#DI
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidHiltCompiler" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltWork" }
+
+#Animation
+compose-lottie-animation = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottieAnimation" }
+
+
+#Lifecycle
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifeCycle" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifeCycleViewModelKtx" }
+lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifeCycleRuntimeCompose" }
+
+#Navigation
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+#Network
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinx-serialization-converter" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
+chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
+
+#Coil
+compose-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "composeCoil" }
+
+#Detect
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+
+#Coroutine
+coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core-jvm", version.ref = "coroutinesCore" }
+
+#Work Runtime
+work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+
+############################################################################################################################################################################
+############################################################################################################################################################################
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+#Ktlint
+kotliner = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+
+#DI
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+#Serialization
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+#Detect
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+
+
+
+
+############################################################################################################################################################################
+############################################################################################################################################################################

@@ -1,6 +1,5 @@
 package com.ameri.newsapi.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,26 +11,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Gunmetal, // Use a dark and bold color for primary elements
+    secondary = CoolGrey, // Use a slightly lighter color for secondary elements
+    tertiary = AntiFlashWhite // Consider using a lighter, contrasting color for tertiary elements
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = AntiFlashWhite, // Use a light and prominent color for primary elements
+    secondary = CoolGrey, // Maintain consistency with the dark theme for secondary elements
+    tertiary = Gunmetal // Use the darker color here for contrast and hierarchy
 )
+
 
 @Composable
 fun NewsApiTheme(

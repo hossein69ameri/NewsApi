@@ -1,4 +1,4 @@
-package com.ameri.newsapi.ui.theme
+package com.ameri.newsapi.util.theme
 
 import androidx.compose.ui.graphics.Color
 

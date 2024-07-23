@@ -43,6 +43,7 @@ fun NewsApiTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
+        shapes = Shapes
     )
 }

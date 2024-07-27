@@ -1,4 +1,4 @@
-package com.ameri.newsapi.util.navigation
+package com.ameri.newsapi.navigation
 
 enum class Screen {
         HOME,

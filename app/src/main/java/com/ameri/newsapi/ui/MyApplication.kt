@@ -1,4 +1,4 @@
-package com.ameri.newsapi.util.application
+package com.ameri.newsapi.ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -13,7 +13,7 @@ import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.ameri.newsapi.R
-import com.ameri.newsapi.util.navigation.Screen
+import com.ameri.newsapi.navigation.Screen
 import com.ameri.newsapi.util.theme.AntiFlashWhite
 import kotlinx.coroutines.delay
 

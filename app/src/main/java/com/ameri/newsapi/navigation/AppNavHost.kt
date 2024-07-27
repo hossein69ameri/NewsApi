@@ -1,4 +1,4 @@
-package com.ameri.newsapi.util.navigation
+package com.ameri.newsapi.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

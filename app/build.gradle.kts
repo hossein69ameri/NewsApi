@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.hilt.android.plugin)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -37,6 +39,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -68,8 +71,9 @@ dependencies {
     //Lottie
     implementation(libs.compose.lottie.animation)
     //Hilt
-    implementation(libs.hilt.work)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     //Lifecycle
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
@@ -89,7 +93,7 @@ dependencies {
     implementation(libs.coroutines)
     //Work Runtime
     implementation(libs.work.runtime.ktx)
-
-
-
+    //gson
+    implementation(libs.gson)
+    implementation(libs.retrofit.gson.converter)
 }

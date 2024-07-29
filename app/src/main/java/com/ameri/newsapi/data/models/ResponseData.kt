@@ -3,7 +3,7 @@ package com.ameri.newsapi.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseTopHeadlines(
+data class ResponseData(
     @SerializedName("status")
     var status: String? = null, // ok
     @SerializedName("totalResults")

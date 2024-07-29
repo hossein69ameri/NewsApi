@@ -18,3 +18,5 @@ const val NAMED_VPN = "named_vpn"
 
 //Query Parameter
 const val US = "us"
+const val BITCOIN = "bitcoin"
+const val POPULARITY = "popularity"

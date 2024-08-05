@@ -56,6 +56,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.request.CachePolicy
 import coil.request.ImageRequest
@@ -155,14 +156,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                         modifier = Modifier.fillMaxSize(),
                     ) {
                         imageUrl = list?.getOrNull(currentPage)?.urlToImage.orEmpty()
-                        val painter = rememberAsyncImagePainter(
-                            ImageRequest.Builder(LocalContext.current)
-                                .data(data = imageUrl)
-                                .diskCachePolicy(CachePolicy.ENABLED)
-                                .memoryCachePolicy(CachePolicy.ENABLED)
-                                .apply(block = fun ImageRequest.Builder.() { scale(Scale.FILL) })
-                                .build()
-                        )
+                        val painter = asyncImagePainter(imageUrl)
                         Card(
                             modifier = Modifier
                                 .fillMaxSize()
@@ -228,6 +222,19 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
             )
         }
     }
+}
+
+@Composable
+private fun asyncImagePainter(imageUrl: String): AsyncImagePainter {
+    val painter = rememberAsyncImagePainter(
+        ImageRequest.Builder(LocalContext.current)
+            .data(data = imageUrl)
+            .diskCachePolicy(CachePolicy.ENABLED)
+            .memoryCachePolicy(CachePolicy.ENABLED)
+            .apply(block = fun ImageRequest.Builder.() { scale(Scale.FILL) })
+            .build()
+    )
+    return painter
 }
 
 @Preview(showBackground = true)

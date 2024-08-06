@@ -3,10 +3,7 @@ package com.ameri.newsapi.util.di
 import android.app.Application
 import com.ameri.newsapi.BuildConfig
 import com.ameri.newsapi.data.network.ApiServices
-import com.ameri.newsapi.util.constant.API_KEY
-import com.ameri.newsapi.util.constant.AUTHORIZATION
-import com.ameri.newsapi.util.constant.BASE_URL
-import com.ameri.newsapi.util.constant.BEARER
+import com.ameri.newsapi.util.constant.BASE_URL_THE_NEWS_API
 import com.ameri.newsapi.util.constant.CONNECTION_TIME
 import com.ameri.newsapi.util.constant.NAMED_PING
 import com.ameri.newsapi.util.constant.PING_INTERVAL
@@ -40,7 +37,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideBaseUrl() = BASE_URL
+    fun provideBaseUrl() = BASE_URL_THE_NEWS_API
 
     @Provides
     @Singleton
@@ -53,13 +50,6 @@ object NetworkModule {
         interceptor: HttpLoggingInterceptor,
         app: Application
     ) = OkHttpClient.Builder()
-        .addInterceptor { chain ->
-            chain.proceed(chain.request().newBuilder().also {
-                it.addHeader(AUTHORIZATION, "$BEARER $API_KEY")
-            }.build())
-        }.also { client ->
-            client.addInterceptor(interceptor)
-        }
         .addInterceptor(interceptor)
         .addInterceptor(ChuckerInterceptor(app))
         .writeTimeout(timeout, TimeUnit.SECONDS)

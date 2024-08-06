@@ -3,8 +3,6 @@ package com.ameri.newsapi.ui.home
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +12,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.width
@@ -26,7 +23,6 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -38,9 +34,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -49,8 +43,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -62,24 +54,21 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Scale
 import com.ameri.newsapi.R
-import com.ameri.newsapi.data.models.ResponseData
+import com.ameri.newsapi.data.models.ResponseTopStories
 import com.ameri.newsapi.util.formatDate
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.util.theme.AntiFlashWhite
 import com.ameri.newsapi.util.theme.CoolGrey
-import com.ameri.newsapi.util.theme.Gunmetal
 import com.ameri.newsapi.viewmodel.HomeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hiltViewModel()) {
-    var list by remember { mutableStateOf(ResponseData().articles) }
-    val pagerState = rememberPagerState(pageCount = { 5 })
+    var list by remember { mutableStateOf(ResponseTopStories()) }
+    val pagerState = rememberPagerState(pageCount = { list.data?.size ?: 0 })
     var imageUrl by remember { mutableStateOf("") }
     var loading by remember { mutableStateOf(false) }
 
@@ -87,12 +76,14 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
         viewModel?.getEverythingData()
         while (true) {
             delay(5000)
-            val nextPage = (pagerState.currentPage + 1) % pagerState.pageCount
-            pagerState.animateScrollToPage(nextPage)
+            if (pagerState.pageCount > 0) {
+                val nextPage = (pagerState.currentPage + 1) % pagerState.pageCount
+                pagerState.animateScrollToPage(nextPage)
+            }
         }
     }
     LaunchedEffect(Dispatchers.Main) {
-        viewModel?.topHeadlinesState?.collectLatest { result ->
+        viewModel?.topStoriesState?.collectLatest { result ->
             when (result) {
                 is NetworkRequest.Error -> {
                     loading = false
@@ -103,8 +94,8 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                 }
 
                 is NetworkRequest.Success -> {
-                    result.data?.let { news ->
-                        list = news.articles?.filter { it.urlToImage != null }
+                    result.data?.let { topStories ->
+                        list = topStories
                     }
                     loading = false
                 }
@@ -155,7 +146,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                     Box(
                         modifier = Modifier.fillMaxSize(),
                     ) {
-                        imageUrl = list?.getOrNull(currentPage)?.urlToImage.orEmpty()
+                        imageUrl = list.data.orEmpty().getOrNull(currentPage)?.imageUrl.orEmpty()
                         val painter = asyncImagePainter(imageUrl)
                         Card(
                             modifier = Modifier
@@ -191,7 +182,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                             verticalArrangement = Arrangement.Bottom,
                         ) {
                             Text(
-                                text = list?.getOrNull(currentPage)?.title.orEmpty(),
+                                text = list.data.orEmpty().getOrNull(currentPage)?.title.orEmpty(),
                                 fontSize = 16.sp,
                                 style = MaterialTheme.typography.titleMedium,
                                 maxLines = 2,
@@ -201,11 +192,10 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                             Spacer(modifier = Modifier.height(5.dp))
                             Text(
                                 text = "${
-                                    list?.getOrNull(currentPage)?.publishedAt.orEmpty().formatDate()
+                                    list.data?.getOrNull(currentPage)?.publishedAt.orEmpty()
+                                        .formatDate()
                                 } by ${
-                                    list?.getOrNull(
-                                        currentPage
-                                    )?.author.orEmpty()
+                                    list.data.orEmpty().getOrNull(currentPage)?.source.orEmpty()
                                 }",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = CoolGrey
@@ -216,7 +206,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
             }
             Spacer(modifier = Modifier.height(10.dp))
             PageIndicator(
-                pageCount = 5,
+                pageCount = pagerState.pageCount,
                 currentPage = pagerState.currentPage,
                 modifier = Modifier
             )

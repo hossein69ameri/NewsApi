@@ -20,29 +20,24 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImagePainter
-import coil.compose.rememberAsyncImagePainter
-import coil.request.CachePolicy
-import coil.request.ImageRequest
-import coil.size.Scale
 import com.ameri.newsapi.data.models.ResponseData
+import com.ameri.newsapi.util.asyncImagePainter
 import com.ameri.newsapi.util.formatDate
 import com.ameri.newsapi.util.theme.AntiFlashWhite
 import com.ameri.newsapi.util.theme.CoolGrey
 
 @Composable
-fun SportItem(item : ResponseData.Data,) {
+fun SportItem(item: ResponseData.Data) {
     Box(
         modifier = Modifier
             .width(300.dp)
             .height(200.dp),
     ) {
-        val painter = asyncImagePainter(item.imageUrl.orEmpty())
+        val painter = item.imageUrl.orEmpty().asyncImagePainter()
         Card(
             modifier = Modifier
                 .fillMaxSize()
@@ -96,19 +91,6 @@ fun SportItem(item : ResponseData.Data,) {
         }
     }
 
-}
-
-@Composable
-private fun asyncImagePainter(imageUrl: String): AsyncImagePainter {
-    val painter = rememberAsyncImagePainter(
-        ImageRequest.Builder(LocalContext.current)
-            .data(data = imageUrl)
-            .diskCachePolicy(CachePolicy.ENABLED)
-            .memoryCachePolicy(CachePolicy.ENABLED)
-            .apply(block = fun ImageRequest.Builder.() { scale(Scale.FILL) })
-            .build()
-    )
-    return painter
 }
 
 

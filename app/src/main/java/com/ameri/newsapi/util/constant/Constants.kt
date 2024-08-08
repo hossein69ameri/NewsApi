@@ -18,4 +18,6 @@ const val CATEGORY_KEY = "categories"
 //Query Value
 const val DEFAULT_LANGUAGE = "en"
 const val SPORTS_CATEGORY = "sports"
+
+//Strings
 const val SPORTS = "Sports"

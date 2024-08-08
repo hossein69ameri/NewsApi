@@ -2,7 +2,7 @@ package com.ameri.newsapi.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameri.newsapi.data.models.ResponseTopStories
+import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.data.repository.HomeRepository
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.util.network.NetworkResponse
@@ -16,7 +16,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
 
     //Top Stories
-    private val _topStoriesState = MutableStateFlow<NetworkRequest<ResponseTopStories>>(NetworkRequest.Loading())
+    private val _topStoriesState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val topStoriesState = _topStoriesState.asStateFlow()
 
     fun getEverythingData() = viewModelScope.launch {
@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
     }
 
     //Sports
-    private val _sportsState = MutableStateFlow<NetworkRequest<ResponseTopStories>>(NetworkRequest.Loading())
+    private val _sportsState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val sportsState = _sportsState.asStateFlow()
 
     fun getSportsData() = viewModelScope.launch {

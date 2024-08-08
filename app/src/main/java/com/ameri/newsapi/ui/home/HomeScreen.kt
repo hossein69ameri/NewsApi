@@ -54,7 +54,7 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Scale
 import com.ameri.newsapi.R
-import com.ameri.newsapi.data.models.ResponseTopStories
+import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.util.formatDate
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.util.theme.AntiFlashWhite
@@ -67,13 +67,14 @@ import kotlinx.coroutines.flow.collectLatest
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hiltViewModel()) {
-    var list by remember { mutableStateOf(ResponseTopStories()) }
+    var list by remember { mutableStateOf(ResponseData()) }
     val pagerState = rememberPagerState(pageCount = { list.data?.size ?: 0 })
     var imageUrl by remember { mutableStateOf("") }
     var loading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         viewModel?.getEverythingData()
+        viewModel?.getSportsData()
         while (true) {
             delay(5000)
             if (pagerState.pageCount > 0) {
@@ -210,6 +211,8 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
                 currentPage = pagerState.currentPage,
                 modifier = Modifier
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            SportSection()
         }
     }
 }

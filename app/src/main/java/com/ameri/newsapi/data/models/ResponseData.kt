@@ -3,11 +3,11 @@ package com.ameri.newsapi.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseTopStories(
+data class ResponseData(
     @SerializedName("meta")
     var meta: Meta? = null,
     @SerializedName("data")
-    var `data`: List<Data?>? = null
+    var `data`: List<Data>? = null
 ) {
     data class Meta(
         @SerializedName("found")

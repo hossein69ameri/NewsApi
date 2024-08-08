@@ -1,6 +1,6 @@
 package com.ameri.newsapi.data.network
 
-import com.ameri.newsapi.data.models.ResponseTopStories
+import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.util.constant.API_KEY_THE_NEWS_API
 import retrofit2.Response
 import retrofit2.http.GET
@@ -12,12 +12,12 @@ interface ApiServices {
     suspend fun getTopStoriesData(
         @Query("api_token") apiToken: String = API_KEY_THE_NEWS_API,
         @Query("language") language: String = "en"
-    ): Response<ResponseTopStories>
+    ): Response<ResponseData>
 
     @GET("all")
     suspend fun getSportsData(
         @Query("api_token") apiToken: String = API_KEY_THE_NEWS_API,
         @Query("language") language: String = "en",
         @Query("categories") category: String = "sports"
-    ): Response<ResponseTopStories>
+    ): Response<ResponseData>
 }

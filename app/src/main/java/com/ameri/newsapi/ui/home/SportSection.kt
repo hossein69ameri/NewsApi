@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ameri.newsapi.data.models.ResponseData
+import com.ameri.newsapi.util.constant.SPORTS
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.viewmodel.HomeViewModel
 import kotlinx.coroutines.Dispatchers
@@ -81,7 +82,7 @@ fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
                     .padding(start = 20.dp),
             ) {
                 Text(
-                    text = "Sports",
+                    text = SPORTS,
                     style = MaterialTheme.typography.titleMedium
                 )
                 Spacer(modifier = Modifier.height(17.dp))

@@ -13,4 +13,11 @@ interface ApiServices {
         @Query("api_token") apiToken: String = API_KEY_THE_NEWS_API,
         @Query("language") language: String = "en"
     ): Response<ResponseTopStories>
+
+    @GET("all")
+    suspend fun getSportsData(
+        @Query("api_token") apiToken: String = API_KEY_THE_NEWS_API,
+        @Query("language") language: String = "en",
+        @Query("categories") category: String = "sports"
+    ): Response<ResponseTopStories>
 }

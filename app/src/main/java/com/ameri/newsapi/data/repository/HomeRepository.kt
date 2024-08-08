@@ -5,4 +5,5 @@ import javax.inject.Inject
 
 class HomeRepository @Inject constructor(private  val apiServices: ApiServices) {
     suspend fun getTopStoriesData() = apiServices.getTopStoriesData()
+    suspend fun getSportsData() = apiServices.getSportsData()
 }

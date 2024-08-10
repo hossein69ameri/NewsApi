@@ -24,4 +24,4 @@ const val Techs_CATEGORY = "tech"
 //Strings
 const val SPORTS = "Sports"
 const val FOODIES = "Foodies"
-const val TECHNOLOGIES = "Sports"
+const val TECHNOLOGIES = "Technologies"

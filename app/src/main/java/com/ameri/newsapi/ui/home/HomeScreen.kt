@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -27,6 +29,7 @@ import com.ameri.newsapi.ui.component.LoadingView
 import com.ameri.newsapi.ui.component.PageIndicator
 import com.ameri.newsapi.ui.home.food_section.FoodSection
 import com.ameri.newsapi.ui.home.sport_section.SportSection
+import com.ameri.newsapi.ui.home.tech_section.TechSection
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.viewmodel.HomeViewModel
 import kotlinx.coroutines.Dispatchers
@@ -45,6 +48,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
         viewModel?.getEverythingData()
         viewModel?.getSportsData()
         viewModel?.getFoodiesData()
+        viewModel?.getTechnologyData()
         while (true) {
             delay(5000)
             if (pagerState.pageCount > 0) {
@@ -76,6 +80,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .windowInsetsPadding(WindowInsets.safeDrawing),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -94,6 +99,8 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
             SportSection()
             Spacer(modifier = Modifier.height(20.dp))
             FoodSection()
+            Spacer(modifier = Modifier.height(20.dp))
+            TechSection()
         }
     }
 }

@@ -32,4 +32,22 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
         _sportsState.value = NetworkRequest.Loading()
         _sportsState.value = NetworkResponse(repository.getSportsData()).safeApiCall()
     }
+
+    //Food
+    private val _foodState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
+    val foodState = _foodState.asStateFlow()
+
+    fun getFoodiesData() = viewModelScope.launch {
+        _foodState.value = NetworkRequest.Loading()
+        _foodState.value = NetworkResponse(repository.getFoodiesData()).safeApiCall()
+    }
+
+    //Tech
+    private val _techState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
+    val techState = _techState.asStateFlow()
+
+    fun getTechnologyData() = viewModelScope.launch {
+        _techState.value = NetworkRequest.Loading()
+        _techState.value = NetworkResponse(repository.getTechnologyData()).safeApiCall()
+    }
 }

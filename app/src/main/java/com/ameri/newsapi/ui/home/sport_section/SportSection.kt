@@ -1,4 +1,4 @@
-package com.ameri.newsapi.ui.home
+package com.ameri.newsapi.ui.home.sport_section
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

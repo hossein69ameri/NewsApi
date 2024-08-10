@@ -24,6 +24,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.ui.component.LoadingView
+import com.ameri.newsapi.ui.component.PageIndicator
+import com.ameri.newsapi.ui.home.sport_section.SportSection
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.viewmodel.HomeViewModel
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.ameri.newsapi.ui.home
+package com.ameri.newsapi.ui.component
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.background

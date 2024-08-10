@@ -1,4 +1,4 @@
-package com.ameri.newsapi.ui.home
+package com.ameri.newsapi.ui.home.sport_section
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

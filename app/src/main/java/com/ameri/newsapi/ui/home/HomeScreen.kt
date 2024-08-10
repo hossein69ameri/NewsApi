@@ -25,6 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.ui.component.LoadingView
 import com.ameri.newsapi.ui.component.PageIndicator
+import com.ameri.newsapi.ui.home.food_section.FoodSection
 import com.ameri.newsapi.ui.home.sport_section.SportSection
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.viewmodel.HomeViewModel
@@ -43,6 +44,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
     LaunchedEffect(Unit) {
         viewModel?.getEverythingData()
         viewModel?.getSportsData()
+        viewModel?.getFoodiesData()
         while (true) {
             delay(5000)
             if (pagerState.pageCount > 0) {
@@ -90,6 +92,8 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hil
             )
             Spacer(modifier = Modifier.height(20.dp))
             SportSection()
+            Spacer(modifier = Modifier.height(20.dp))
+            FoodSection()
         }
     }
 }

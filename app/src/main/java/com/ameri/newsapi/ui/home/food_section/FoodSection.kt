@@ -1,4 +1,4 @@
-package com.ameri.newsapi.ui.home.sport_section
+package com.ameri.newsapi.ui.home.food_section
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,19 +22,19 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.ui.component.LoadingView
-import com.ameri.newsapi.util.constant.SPORTS
+import com.ameri.newsapi.util.constant.FOODIES
 import com.ameri.newsapi.util.network.NetworkRequest
 import com.ameri.newsapi.viewmodel.HomeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
-fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
-    var popularityList by remember { mutableStateOf<List<ResponseData.Data>>(emptyList()) }
+fun FoodSection(viewModel: HomeViewModel? = hiltViewModel()) {
+    var foodList by remember { mutableStateOf<List<ResponseData.Data>>(emptyList()) }
     var loading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Dispatchers.Main) {
-        viewModel?.sportsState?.collectLatest { result ->
+        viewModel?.foodState?.collectLatest { result ->
             when (result) {
                 is NetworkRequest.Error -> {
                     loading = false
@@ -45,8 +45,8 @@ fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
                 }
 
                 is NetworkRequest.Success -> {
-                    result.data?.let { sports ->
-                        popularityList = sports.data!!
+                    result.data?.let { foodies ->
+                        foodList = foodies.data!!
                     }
                     loading = false
                 }
@@ -55,7 +55,7 @@ fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
     }
 
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         if (loading) {
@@ -67,13 +67,13 @@ fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
                     .padding(start = 20.dp),
             ) {
                 Text(
-                    text = SPORTS,
+                    text = FOODIES,
                     style = MaterialTheme.typography.titleMedium
                 )
                 Spacer(modifier = Modifier.height(17.dp))
                 LazyRow() {
-                    items(popularityList) { item ->
-                        SportItem(item = item)
+                    items(foodList) { item ->
+                        FoodItem(item = item)
                     }
                 }
             }

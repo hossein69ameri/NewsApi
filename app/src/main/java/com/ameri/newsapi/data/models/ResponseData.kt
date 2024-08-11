@@ -4,36 +4,48 @@ package com.ameri.newsapi.data.models
 import com.google.gson.annotations.SerializedName
 
 data class ResponseData(
-    @SerializedName("status")
-    var status: String? = null, // ok
-    @SerializedName("totalResults")
-    var totalResults: Int? = null, // 35
-    @SerializedName("articles")
-    var articles: List<Article>? = null
+    @SerializedName("meta")
+    var meta: Meta? = null,
+    @SerializedName("data")
+    var `data`: List<Data>? = null
 ) {
-    data class Article(
-        @SerializedName("source")
-        var source: Source? = null,
-        @SerializedName("author")
-        var author: String? = null, // Axios
+    data class Meta(
+        @SerializedName("found")
+        var found: Int? = null, // 1105215
+        @SerializedName("returned")
+        var returned: Int? = null, // 3
+        @SerializedName("limit")
+        var limit: Int? = null, // 3
+        @SerializedName("page")
+        var page: Int? = null // 1
+    )
+
+    data class Data(
+        @SerializedName("uuid")
+        var uuid: String? = null, // 15e29a9d-c2cf-4797-ba4b-a73bcabc2178
         @SerializedName("title")
-        var title: String? = null, // Kamala Harris gets fundraising boost after Biden drops out of race - Axios
+        var title: String? = null, // The Pop-Tarts Bowl and the future of college football's postseason
         @SerializedName("description")
-        var description: String? = null, // Veteran environmentalist held in Greenland faces extradition to Japan allegedly over anti-whaling activities in the Antarctic years ago, his organization said.
+        var description: String? = null, // Amid a tumultuous college sports landscape, the Pop-Tarts Bowl has shown a way forward.
+        @SerializedName("keywords")
+        var keywords: String? = null,
+        @SerializedName("snippet")
+        var snippet: String? = null, // Open Extended ReactionsFor Michigan fans, the moment when the Wolverines clinched a national championship in January will echo through generations.For every...
         @SerializedName("url")
-        var url: String? = null, // https://news.google.com/rss/articles/CBMiQ2h0dHBzOi8vd3d3LmF4aW9zLmNvbS8yMDI0LzA3LzIyL2thbWFsYS1oYXJyaXMtY2FtcGFpZ24tZnVuZHJhaXNpbmfSAQA?oc=5
-        @SerializedName("urlToImage")
-        var urlToImage: String? = null, // https://media.cnn.com/api/v1/images/stellar/prod/ap24203669397704.jpg?c=16x9&q=w_800,c_fill
-        @SerializedName("publishedAt")
-        var publishedAt: String? = null, // 2024-07-22T09:37:02Z
-        @SerializedName("content")
-        var content: String? = null // Veteran environmentalist Paul Watson was arrested in Greenland on Sunday and faces possible extradition to Japan allegedly over anti-whaling activities in the Antarctic years ago, his organization sa… [+5659 chars]
-    ) {
-        data class Source(
-            @SerializedName("id")
-            var id: String? = null, // google-news
-            @SerializedName("name")
-            var name: String? = null // Google News
-        )
-    }
+        var url: String? = null, // https://www.espn.com/college-football/story/_/id/40710345/pop-tarts-bowl-season-future-college-football
+        @SerializedName("image_url")
+        var imageUrl: String? = null, // https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0805%2Fncf_pop%2Dtart%2Dbowl%2Dfuture%2Dcfb_16x9.jpg
+        @SerializedName("language")
+        var language: String? = null, // en
+        @SerializedName("published_at")
+        var publishedAt: String? = null, // 2024-08-06T12:41:28.000000Z
+        @SerializedName("source")
+        var source: String? = null, // espn.com
+        @SerializedName("categories")
+        var categories: List<String?>? = null,
+        @SerializedName("relevance_score")
+        var relevanceScore: Any? = null, // null
+        @SerializedName("locale")
+        var locale: String? = null // us
+    )
 }

@@ -9,60 +9,60 @@ projectCompileSdkVersion = "34"
 projectVersionCode = "1"
 
 #Root
-agp = "8.4.1"
-kotlin = "1.9.0"
-coreKtx = "1.10.1"
+agp = "8.4.2"
+kotlin = "2.0.0"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.9.0"
-composeBom = "2023.08.00"
-ksp = "1.9.10-1.0.13"
+lifecycleRuntimeKtx = "2.8.4"
+activityCompose = "1.9.1"
+composeBom = "2024.06.00"
+ksp = "2.0.0-1.0.22"
 
 #Ktlint
 kotlinter = "3.16.0"
 
 #DI
-hilt = "2.48"
-androidHiltCompiler = "1.0.0"
-hiltNavigationCompose = "1.0.0"
-hiltWork = "1.0.0"
+hilt = "2.51.1"
+androidHiltCompiler = "1.2.0"
+hiltNavigationCompose = "1.2.0"
+hiltWork = "1.2.0"
 javaxInject = "1"
 
 #Animation
 lottieAnimation = "6.1.0"
 
 #Lifecycle
-lifeCycle = "2.6.2"
-lifeCycleViewModelKtx = "2.6.2"
-lifeCycleRuntimeCompose = "2.6.2"
+lifeCycle = "2.8.4"
+lifeCycleViewModelKtx = "2.8.4"
+lifeCycleRuntimeCompose = "2.8.4"
 
 #Navigation
-navigationCompose = "2.7.4"
+navigationCompose = "2.7.7"
 
 #Network
-retrofit = "2.9.0"
-loggingInterceptor = "4.11.0"
-chucker = "3.5.2"
+retrofit = "2.11.0"
+loggingInterceptor = "4.12.0"
+chucker = "4.0.0"
 kotlinx-serialization = "1.6.0"
 kotlinx-serialization-converter = "1.0.0"
 
 #Coil
-composeCoil = "2.2.2"
+composeCoil = "2.7.0"
 
 #Detect
 detekt = "1.23.1"
 
 #Coroutine
-coroutinesCore = "1.7.3"
+coroutinesCore = "1.8.1"
 
 #Work Runtime
-workRuntimeKtx = "2.8.1"
+workRuntimeKtx = "2.9.1"
 
 #Gson
-gson = "2.9.1"
-gson-converter = "2.9.0"
+gson = "2.10.1"
+gson-converter = "2.11.0"
 
 ############################################################################################################################################################################
 ############################################################################################################################################################################
@@ -137,6 +137,8 @@ retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
 
 #Ktlint
 kotliner = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }

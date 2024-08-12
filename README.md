@@ -31,8 +31,6 @@ Dependency injection
 
 [Hilt](https://dagger.dev/hilt/)  - Dependency injection.
 
-[ViewBinding](https://developer.android.com/topic/libraries/view-binding) - View binding is a feature that allows you to more easily write code that interacts with views 
-
 [Android Architecture Components](https://developer.android.com/topic/libraries/architecture)  - A collection of libraries that help you design robust, testable and maintainable apps.
 
 [ViewModel](https://developer.android.com/reference/androidx/lifecycle/ViewModel)  - UI-related data holder, lifecycle aware.

@@ -1,9 +1,9 @@
-# FoodRecipeApp
+# NewsApi
 Welcome to the [NewsApi] repository! This project is an Android application developed in Kotlin, leveraging the latest Android technologies, including Jetpack Compose for a modern and responsive UI. The app utilizes the [The News API](https://www.thenewsapi.com/) to fetch and display the latest news articles from around the world.
 This application is designed to be a showcase of best practices in modern Android development, including the use of MVVM, dependency injection, and the latest tools and libraries. Whether you're looking to stay informed with the latest news or explore the possibilities of Jetpack Compose and Kotlin in Android development, this project is a great starting point.
 
 # Screen Shot
-<img src="https://github.com/hossein69ameri/Blogs/assets/103646893/dac920cb-2fcc-4e2e-9a0f-16becd3ad19a" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/hossein69ameri/FoodRecipeApp/assets/103646893/29aaf1cf-b966-4eed-91e2-efc5167265c5" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/hossein69ameri/FoodRecipeApp/assets/103646893/763192c6-ba3c-48ff-b482-40edce045b89" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | 
+<img src="https://github.com/user-attachments/assets/fcb6d23c-60c4-405b-8da9-40db1eae312c" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/user-attachments/assets/9c2bbf5a-7ecb-465d-be3a-7fc96f90bbac" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 
 # Features
 100% Kotlin

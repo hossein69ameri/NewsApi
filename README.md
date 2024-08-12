@@ -8,20 +8,26 @@ This application is designed to be a showcase of best practices in modern Androi
 # Features
 100% Kotlin
 
-Cache Data
+Dependency Managment With Version Catalog
+
+Jetpack Compose
 
 MVVM architecture
 
 Android Architecture Components
 
-Kotlin Coroutines + Flow + LiveData
+Kotlin Coroutines + Flow
 
 Single activity pattern
 
 Dependency injection
 
 # Tech Stacks
-[Retrofit](https://square.github.io/retrofit/) + [OkHttp](https://square.github.io/okhttp/) - RESTful API and networking client.
+[KSP](https://developer.android.com/build/migrate-to-ksp) - Migrate from kapt to KSP.
+
+[Chucker](https://github.com/ChuckerTeam/chucker)- An HTTP inspector for Android & OkHTTP
+
+[Retrofit](https://square.github.io/retrofit/) + [OkHttp](https://square.github.io/okhttp/) - An HTTP inspector for Android & OkHTTP
 
 [Hilt](https://dagger.dev/hilt/)  - Dependency injection.
 
@@ -36,14 +42,6 @@ Dependency injection
 [Coroutines](https://developer.android.com/kotlin/coroutines) - Concurrency design pattern for asynchronous programming.
 
 [Flow](https://developer.android.com/kotlin/flow) - Stream of value that returns from suspend function.
-
-[LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - LiveData is an observable data holder class.
-
-[DiffUtil](https://developer.android.com/reference/androidx/recyclerview/widget/DiffUtil) - DiffUtil is a utility class that calculates the difference between two lists and outputs a list of update operations that converts the first list into the second one.
-
-[Room](https://developer.android.com/training/data-storage/room) - Save data in a local database using Room.
-
-[Data Store](https://developer.android.com/topic/libraries/architecture/datastore) - Jetpack DataStore is a data storage solution that allows you to store key-value pairs or typed objects with protocol buffers
 
 [Lottie](https://lottiefiles.com/blog/working-with-lottie/getting-started-with-lottie-animations-in-android-app) - Animations in an Android App
 

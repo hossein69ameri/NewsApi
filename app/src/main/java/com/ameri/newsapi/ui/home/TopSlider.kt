@@ -29,16 +29,10 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImagePainter
-import coil.compose.rememberAsyncImagePainter
-import coil.request.CachePolicy
-import coil.request.ImageRequest
-import coil.size.Scale
 import com.ameri.newsapi.R
 import com.ameri.newsapi.data.models.ResponseData
 import com.ameri.newsapi.util.asyncImagePainter
@@ -84,7 +78,8 @@ fun TopSlider(
                         .padding(horizontal = 10.dp),
                     shape = RoundedCornerShape(18.dp),
                     elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-                    border = BorderStroke(width = 2.dp, color = Color.White),
+                    border = BorderStroke(width = 2.dp, color = MaterialTheme.colorScheme.secondary
+                    ),
                 ) {
                     Image(
                         painter = painter,
@@ -117,7 +112,7 @@ fun TopSlider(
                         style = MaterialTheme.typography.titleMedium,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
-                        color = AntiFlashWhite
+                        color = AntiFlashWhite,
                     )
                     Spacer(modifier = Modifier.height(5.dp))
                     Text(
@@ -128,7 +123,7 @@ fun TopSlider(
                             list.data.orEmpty().getOrNull(currentPage)?.source.orEmpty()
                         }",
                         style = MaterialTheme.typography.bodySmall,
-                        color = CoolGrey
+                        color = CoolGrey,
                     )
                 }
             }

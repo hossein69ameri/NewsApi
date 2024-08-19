@@ -3,6 +3,7 @@ package com.ameri.newsapi.ui.splash
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -14,7 +15,6 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.ameri.newsapi.R
 import com.ameri.newsapi.navigation.Screen
-import com.ameri.newsapi.util.theme.AntiFlashWhite
 import kotlinx.coroutines.delay
 
 
@@ -22,8 +22,8 @@ import kotlinx.coroutines.delay
 fun SplashScreen(navController: NavHostController) {
     Box(
         modifier = Modifier
-            .background(AntiFlashWhite)
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center
     ){
         val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.news))

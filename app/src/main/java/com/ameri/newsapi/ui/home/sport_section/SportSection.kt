@@ -1,6 +1,7 @@
 package com.ameri.newsapi.ui.home.sport_section
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -63,15 +64,16 @@ fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
         } else {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 20.dp),
+                    .fillMaxWidth(),
             ) {
-                Text(
+                Text(modifier = Modifier
+                    .padding(start = 20.dp),
                     text = SPORTS,
-                    style = MaterialTheme.typography.titleMedium
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onBackground
                 )
                 Spacer(modifier = Modifier.height(17.dp))
-                LazyRow() {
+                LazyRow(contentPadding = PaddingValues(start = 20.dp)) {
                     items(popularityList) { item ->
                         SportItem(item = item)
                     }

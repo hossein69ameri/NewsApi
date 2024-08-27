@@ -23,6 +23,9 @@ Single activity pattern
 Dependency injection
 
 # Tech Stacks
+
+[Jetpack Compose](https://developer.android.com/compose) - Build better apps faster with Jetpack Compose.
+
 [KSP](https://developer.android.com/build/migrate-to-ksp) - Migrate from kapt to KSP.
 
 [Chucker](https://github.com/ChuckerTeam/chucker)- An HTTP inspector for Android & OkHTTP

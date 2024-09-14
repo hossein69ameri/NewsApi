@@ -3,7 +3,7 @@ Welcome to the [NewsApi] repository! This project is an Android application deve
 This application is designed to be a showcase of best practices in modern Android development, including the use of MVVM, dependency injection, and the latest tools and libraries. Whether you're looking to stay informed with the latest news or explore the possibilities of Jetpack Compose and Kotlin in Android development, this project is a great starting point.
 
 # Screen Shot
-<img src="https://github.com/user-attachments/assets/fcb6d23c-60c4-405b-8da9-40db1eae312c" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/user-attachments/assets/9c2bbf5a-7ecb-465d-be3a-7fc96f90bbac" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/user-attachments/assets/1858235a-b5b1-4625-b1e2-19a8361b32f8" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/user-attachments/assets/490e8d5d-0d84-4211-8c7f-faf4047f18ae" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
+<img src="https://github.com/user-attachments/assets/696266e1-8d77-4078-ab70-754f6e8a30f5" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" /> | <img src="https://github.com/user-attachments/assets/aaafc8c6-e862-4796-ba1f-e43432bd5f1f" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 
 # Features
 100% Kotlin

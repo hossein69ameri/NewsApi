@@ -1,12 +1,13 @@
 package com.ameri.newsapi.navigation
 
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.ameri.newsapi.ui.home.HomeScreen
-import com.ameri.newsapi.ui.splash.SplashScreen
+import com.ameri.presentation.ui.home.HomeScreen
+import com.ameri.presentation.ui.splash.SplashScreen
 
 @Composable
 fun AppNavHost(

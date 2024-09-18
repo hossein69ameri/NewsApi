@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(project(":presentation"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,32 +71,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    //Lottie
-    implementation(libs.compose.lottie.animation)
     //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    //Lifecycle
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
-    implementation(libs.lifecycle.runtime.compose)
-    //navigation
-    implementation(libs.navigation.compose)
-    //Network
-    implementation(libs.retrofit)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.serialization.converter)
-    implementation(libs.logging.interceptor)
-    debugImplementation(libs.chucker)
-    releaseImplementation(libs.chucker.no.op)
-    //Coil
-    implementation(libs.compose.coil)
-    //Coroutine
-    implementation(libs.coroutines)
-    //Work Runtime
-    implementation(libs.work.runtime.ktx)
-    //gson
-    implementation(libs.gson)
-    implementation(libs.retrofit.gson.converter)
 }

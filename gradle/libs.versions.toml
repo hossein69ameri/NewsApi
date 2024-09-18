@@ -10,7 +10,7 @@ projectVersionCode = "1"
 
 #Root
 agp = "8.4.2"
-kotlin = "2.0.0"
+kotlin = "2.0.20"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -18,7 +18,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.5"
 activityCompose = "1.9.2"
 composeBom = "2024.09.01"
-ksp = "2.0.0-1.0.22"
+ksp = "2.0.20-1.0.25"
 
 #Ktlint
 kotlinter = "3.16.0"

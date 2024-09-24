@@ -32,7 +32,6 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(project(":app"))
     implementation(project(":domain"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

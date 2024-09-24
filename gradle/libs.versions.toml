@@ -3,7 +3,7 @@
 [versions]
 projectApplicationId = "com.ameri.newsapi"
 projectVersionName = "1.0"
-projectMinSdkVersion = "23"
+projectMinSdkVersion = "24"
 projectTargetSdkVersion = "34"
 projectCompileSdkVersion = "34"
 projectVersionCode = "1"
@@ -15,10 +15,11 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.5"
+lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.2"
-composeBom = "2024.09.01"
+composeBom = "2024.09.02"
 ksp = "2.0.20-1.0.25"
+compose-foundation = "1.7.2"
 
 #Ktlint
 kotlinter = "3.16.0"
@@ -34,12 +35,12 @@ javaxInject = "1"
 lottieAnimation = "6.1.0"
 
 #Lifecycle
-lifeCycle = "2.8.5"
-lifeCycleViewModelKtx = "2.8.5"
-lifeCycleRuntimeCompose = "2.8.5"
+lifeCycle = "2.8.6"
+lifeCycleViewModelKtx = "2.8.6"
+lifeCycleRuntimeCompose = "2.8.6"
 
 #Navigation
-navigationCompose = "2.8.0"
+navigationCompose = "2.8.1"
 
 #Network
 retrofit = "2.11.0"
@@ -82,6 +83,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version = "compose-foundation" }
 
 #Ktlint
 ktlint-kotlinter = { group = "org.jmailen.gradle", name = "kotlinter-gradle", version.ref = "kotlinter" }

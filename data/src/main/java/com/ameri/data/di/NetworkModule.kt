@@ -6,7 +6,6 @@ import com.ameri.data.CONNECTION_TIME
 import com.ameri.data.NAMED_PING
 import com.ameri.data.PING_INTERVAL
 import com.ameri.data.network.ApiServices
-import com.ameri.newsapi.BuildConfig
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -62,8 +61,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideInterceptor() = HttpLoggingInterceptor().apply {
-        level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
-        else HttpLoggingInterceptor.Level.NONE
+        level = HttpLoggingInterceptor.Level.BODY
     }
 
     @Provides

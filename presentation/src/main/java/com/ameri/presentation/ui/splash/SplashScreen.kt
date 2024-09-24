@@ -13,8 +13,8 @@ import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.rememberLottieComposition
-import com.ameri.newsapi.navigation.Screen
 import com.ameri.presentation.R
+import com.ameri.presentation.navigation.Screen
 import kotlinx.coroutines.delay
 
 

@@ -3,7 +3,7 @@ package com.ameri.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ameri.domain.models.ResponseData
-import com.ameri.domain.repository.HomeRepository
+import com.ameri.domain.repository.NewsRepository
 import com.ameri.presentation.util.networkUtil.NetworkRequest
 import com.ameri.presentation.util.networkUtil.NetworkResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
+class HomeViewModel @Inject constructor(private val repository: NewsRepository) : ViewModel() {
 
     //Top Stories
     private val _topStoriesState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())

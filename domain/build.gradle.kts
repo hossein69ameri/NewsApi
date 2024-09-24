@@ -32,7 +32,6 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(project(":data"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

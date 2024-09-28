@@ -33,14 +33,14 @@ import com.ameri.presentation.ui.home.food_section.FoodSection
 import com.ameri.presentation.ui.home.sport_section.SportSection
 import com.ameri.presentation.ui.home.tech_section.TechSection
 import com.ameri.presentation.util.networkUtil.NetworkRequest
-import com.ameri.presentation.viewmodel.HomeViewModel
+import com.ameri.presentation.viewmodel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel? = hiltViewModel()) {
+fun HomeScreen(navController: NavHostController, viewModel: NewsViewModel? = hiltViewModel()) {
     var list by remember { mutableStateOf(ResponseData()) }
     val pagerState = rememberPagerState(pageCount = { list.data?.size ?: 0 })
     var imageUrl by remember { mutableStateOf("") }

@@ -3,11 +3,10 @@ package com.ameri.data.repository
 import com.ameri.data.network.ApiServices
 import com.ameri.domain.models.ResponseData
 import com.ameri.domain.repository.NewsRepository
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import javax.inject.Inject
 
-class NewsRepository @Inject constructor(private  val apiServices: ApiServices) : NewsRepository {
+class NewsRepositoryImpl @Inject constructor(private  val apiServices: ApiServices) : NewsRepository {
 
     override suspend fun getTopStoriesData(): Response<ResponseData> =  apiServices.getTopStoriesData()
 

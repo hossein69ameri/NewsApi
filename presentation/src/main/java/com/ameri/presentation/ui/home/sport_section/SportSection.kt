@@ -24,12 +24,12 @@ import com.ameri.domain.models.ResponseData
 import com.ameri.presentation.ui.component.LoadingView
 import com.ameri.presentation.util.constant.SPORTS
 import com.ameri.presentation.util.networkUtil.NetworkRequest
-import com.ameri.presentation.viewmodel.HomeViewModel
+import com.ameri.presentation.viewmodel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
-fun SportSection(viewModel: HomeViewModel? = hiltViewModel()) {
+fun SportSection(viewModel: NewsViewModel? = hiltViewModel()) {
     var popularityList by remember { mutableStateOf<List<ResponseData.Data>>(emptyList()) }
     var loading by remember { mutableStateOf(false) }
 

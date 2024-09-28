@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repository: NewsRepository) : ViewModel() {
+class NewsViewModel @Inject constructor(private val repository: NewsRepository) : ViewModel() {
 
     //Top Stories
     private val _topStoriesState = MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())

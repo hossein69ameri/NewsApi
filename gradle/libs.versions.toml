@@ -3,7 +3,7 @@
 [versions]
 projectApplicationId = "com.ameri.newsapi"
 projectVersionName = "1.0"
-projectMinSdkVersion = "24"
+projectMinSdkVersion = "23"
 projectTargetSdkVersion = "34"
 projectCompileSdkVersion = "34"
 projectVersionCode = "1"
@@ -15,9 +15,9 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.6"
+lifecycleRuntimeKtx = "2.8.5"
 activityCompose = "1.9.2"
-composeBom = "2024.09.02"
+composeBom = "2024.09.01"
 ksp = "2.0.20-1.0.25"
 compose-f = "1.7.2"
 
@@ -35,12 +35,12 @@ javaxInject = "1"
 lottieAnimation = "6.1.0"
 
 #Lifecycle
-lifeCycle = "2.8.6"
-lifeCycleViewModelKtx = "2.8.6"
-lifeCycleRuntimeCompose = "2.8.6"
+lifeCycle = "2.8.5"
+lifeCycleViewModelKtx = "2.8.5"
+lifeCycleRuntimeCompose = "2.8.5"
 
 #Navigation
-navigationCompose = "2.8.1"
+navigationCompose = "2.8.0"
 
 #Network
 retrofit = "2.11.0"
@@ -158,7 +158,6 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 android-library = { id = "com.android.library", version.ref = "agp" }
-
 
 
 

@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.hilt.android.plugin)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -52,6 +54,8 @@ dependencies {
     //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
     //Coil
     implementation(libs.compose.coil)
     //Network

@@ -65,8 +65,9 @@ fun SportSection(viewModel: NewsViewModel? = hiltViewModel()) {
                 modifier = Modifier
                     .fillMaxWidth(),
             ) {
-                Text(modifier = Modifier
-                    .padding(start = 20.dp),
+                Text(
+                    modifier = Modifier
+                        .padding(start = 20.dp),
                     text = SPORTS,
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onBackground

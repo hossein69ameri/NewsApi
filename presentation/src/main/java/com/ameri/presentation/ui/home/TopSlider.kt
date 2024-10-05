@@ -1,7 +1,6 @@
 package com.ameri.presentation.ui.home
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -42,7 +41,6 @@ import com.ameri.presentation.util.theme.CoolGrey
 
 
 @Composable
-@OptIn(ExperimentalFoundationApi::class)
 fun TopSlider(
     pagerState: PagerState,
     imageUrl: String,
@@ -78,7 +76,8 @@ fun TopSlider(
                         .padding(horizontal = 10.dp),
                     shape = RoundedCornerShape(18.dp),
                     elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
-                    border = BorderStroke(width = 2.dp, color = MaterialTheme.colorScheme.secondary
+                    border = BorderStroke(
+                        width = 2.dp, color = MaterialTheme.colorScheme.secondary
                     ),
                 ) {
                     Image(

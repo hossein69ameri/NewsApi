@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.ameri.presentation.navigation.NavigationItem
 import com.ameri.presentation.ui.home.HomeScreen
 import com.ameri.presentation.ui.splash.SplashScreen
-import com.ameri.presentation.navigation.NavigationItem
 
 @Composable
 fun AppNavHost(
@@ -25,7 +25,7 @@ fun AppNavHost(
             SplashScreen(navController)
         }
         composable(NavigationItem.Home.route) {
-            HomeScreen(navController)
+            HomeScreen()
         }
     }
 }

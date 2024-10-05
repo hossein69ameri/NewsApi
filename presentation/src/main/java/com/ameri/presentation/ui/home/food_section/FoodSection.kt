@@ -66,7 +66,8 @@ fun FoodSection(viewModel: NewsViewModel? = hiltViewModel()) {
                 modifier = Modifier
                     .fillMaxWidth(),
             ) {
-                Text(modifier = Modifier
+                Text(
+                    modifier = Modifier
                         .fillMaxWidth()
                         .padding(start = 20.dp),
                     text = FOODIES,

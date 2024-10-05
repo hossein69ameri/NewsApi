@@ -68,7 +68,7 @@ fun TechSection(viewModel: NewsViewModel? = hiltViewModel()) {
             ) {
                 Text(
                     modifier = Modifier
-                    .padding(start = 20.dp),
+                        .padding(start = 20.dp),
                     text = TECHNOLOGIES,
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onBackground

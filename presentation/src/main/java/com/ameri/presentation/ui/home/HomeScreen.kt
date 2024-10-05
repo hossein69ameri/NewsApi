@@ -1,6 +1,5 @@
 package com.ameri.presentation.ui.home
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,8 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.ameri.domain.models.ResponseData
 import com.ameri.presentation.ui.component.LoadingView
 import com.ameri.presentation.ui.component.PageIndicator
@@ -38,9 +35,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: NewsViewModel? = hiltViewModel()) {
+fun HomeScreen(viewModel: NewsViewModel? = hiltViewModel()) {
     var list by remember { mutableStateOf(ResponseData()) }
     val pagerState = rememberPagerState(pageCount = { list.data?.size ?: 0 })
     var imageUrl by remember { mutableStateOf("") }
@@ -111,5 +107,5 @@ fun HomeScreen(navController: NavHostController, viewModel: NewsViewModel? = hil
 @Preview(showBackground = true)
 @Composable
 fun HomePreview() {
-    HomeScreen(navController = rememberNavController(), null)
+    HomeScreen(null)
 }

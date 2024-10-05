@@ -25,7 +25,7 @@ fun SplashScreen(navController: NavHostController) {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center
-    ){
+    ) {
         val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.news))
         LottieAnimation(
             composition,
@@ -34,8 +34,8 @@ fun SplashScreen(navController: NavHostController) {
     }
     LaunchedEffect(true) {
         delay(3000)
-        navController.navigate(Screen.HOME.name){
-            popUpTo(Screen.SPLASH.name){
+        navController.navigate(Screen.HOME.name) {
+            popUpTo(Screen.SPLASH.name) {
                 inclusive = true
             }
         }

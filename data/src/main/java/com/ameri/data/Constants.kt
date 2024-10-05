@@ -20,8 +20,3 @@ const val DEFAULT_LANGUAGE = "en"
 const val SPORTS_CATEGORY = "sports"
 const val Foodies_CATEGORY = "food"
 const val Techs_CATEGORY = "tech"
-
-//Strings
-const val SPORTS = "Sports"
-const val FOODIES = "Foodies"
-const val TECHNOLOGIES = "Technologies"

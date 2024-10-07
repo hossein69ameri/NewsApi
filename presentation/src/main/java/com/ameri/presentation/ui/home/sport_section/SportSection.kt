@@ -20,17 +20,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ameri.remote.models.ResponseData
 import com.ameri.presentation.ui.component.LoadingView
 import com.ameri.presentation.util.constant.SPORTS
 import com.ameri.presentation.util.networkUtil.NetworkRequest
 import com.ameri.presentation.viewmodel.NewsViewModel
+import com.ameri.remote.models.ResponseData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun SportSection(viewModel: NewsViewModel? = hiltViewModel()) {
-    var popularityList by remember { mutableStateOf<List<com.ameri.remote.models.ResponseData.Data>>(emptyList()) }
+    var popularityList by remember { mutableStateOf<List<ResponseData.Data>>(emptyList()) }
     var loading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Dispatchers.Main) {

@@ -2,10 +2,10 @@ package com.ameri.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameri.remote.models.ResponseData
 import com.ameri.domain.repository.NewsRepository
 import com.ameri.presentation.util.networkUtil.NetworkRequest
 import com.ameri.presentation.util.networkUtil.NetworkResponse
+import com.ameri.remote.models.ResponseData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,7 +17,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     //Top Stories
     private val _topStoriesState =
-        MutableStateFlow<NetworkRequest<com.ameri.remote.models.ResponseData>>(NetworkRequest.Loading())
+        MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val topStoriesState = _topStoriesState.asStateFlow()
 
     fun getEverythingData() = viewModelScope.launch {
@@ -27,7 +27,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     //Sports
     private val _sportsState =
-        MutableStateFlow<NetworkRequest<com.ameri.remote.models.ResponseData>>(NetworkRequest.Loading())
+        MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val sportsState = _sportsState.asStateFlow()
 
     fun getSportsData() = viewModelScope.launch {
@@ -37,7 +37,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     //Food
     private val _foodState =
-        MutableStateFlow<NetworkRequest<com.ameri.remote.models.ResponseData>>(NetworkRequest.Loading())
+        MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val foodState = _foodState.asStateFlow()
 
     fun getFoodiesData() = viewModelScope.launch {
@@ -47,7 +47,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     //Tech
     private val _techState =
-        MutableStateFlow<NetworkRequest<com.ameri.remote.models.ResponseData>>(NetworkRequest.Loading())
+        MutableStateFlow<NetworkRequest<ResponseData>>(NetworkRequest.Loading())
     val techState = _techState.asStateFlow()
 
     fun getTechnologyData() = viewModelScope.launch {

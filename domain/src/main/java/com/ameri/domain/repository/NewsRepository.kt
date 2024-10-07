@@ -1,6 +1,6 @@
 package com.ameri.domain.repository
 
-import com.ameri.domain.models.ResponseData
+import com.ameri.remote.models.ResponseData
 import retrofit2.Response
 
 interface NewsRepository {

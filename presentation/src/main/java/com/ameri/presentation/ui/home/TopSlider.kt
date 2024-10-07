@@ -32,7 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ameri.domain.models.ResponseData
+import com.ameri.remote.models.ResponseData
 import com.ameri.presentation.R
 import com.ameri.presentation.util.asyncImagePainter
 import com.ameri.presentation.util.formatDate
@@ -44,7 +44,7 @@ import com.ameri.presentation.util.theme.CoolGrey
 fun TopSlider(
     pagerState: PagerState,
     imageUrl: String,
-    list: ResponseData
+    list: com.ameri.remote.models.ResponseData
 ) {
     var imageUrl1 = imageUrl
     Image(

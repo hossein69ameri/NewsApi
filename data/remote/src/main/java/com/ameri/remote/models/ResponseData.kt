@@ -1,4 +1,4 @@
-package com.ameri.domain.models
+package com.ameri.remote.models
 
 
 import com.google.gson.annotations.SerializedName

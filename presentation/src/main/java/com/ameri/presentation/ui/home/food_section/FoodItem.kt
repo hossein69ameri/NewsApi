@@ -24,14 +24,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ameri.domain.models.ResponseData
+import com.ameri.remote.models.ResponseData
 import com.ameri.presentation.util.asyncImagePainter
 import com.ameri.presentation.util.formatDate
 import com.ameri.presentation.util.theme.AntiFlashWhite
 import com.ameri.presentation.util.theme.CoolGrey
 
 @Composable
-fun FoodItem(item: ResponseData.Data) {
+fun FoodItem(item: com.ameri.remote.models.ResponseData.Data) {
     Box(
         modifier = Modifier
             .width(300.dp)
@@ -97,5 +97,5 @@ fun FoodItem(item: ResponseData.Data) {
 @Preview
 @Composable
 fun FoodItemPreview() {
-    FoodItem(ResponseData.Data())
+    FoodItem(com.ameri.remote.models.ResponseData.Data())
 }

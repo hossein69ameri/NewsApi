@@ -23,6 +23,5 @@ rootProject.name = "NewsApi"
 include(":app")
 include(":presentation")
 include(":domain")
-include(":data")
 include(":data:remote")
 include(":data:repository")

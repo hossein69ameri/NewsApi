@@ -1,6 +1,6 @@
 package com.ameri.repository
 
-import com.ameri.domain.models.ResponseData
+import com.ameri.remote.models.ResponseData
 import com.ameri.domain.repository.NewsRepository
 import com.ameri.remote.network.ApiServices
 import retrofit2.Response

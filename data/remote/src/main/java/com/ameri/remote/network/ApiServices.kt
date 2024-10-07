@@ -1,7 +1,7 @@
 package com.ameri.remote.network
 
 
-import com.ameri.domain.models.ResponseData
+import com.ameri.remote.models.ResponseData
 import com.ameri.remote.*
 import retrofit2.Response
 import retrofit2.http.GET

@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ameri.presentation"
+    namespace = "com.ameri.remote"
     compileSdk = 34
 
     defaultConfig {
@@ -36,28 +36,16 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(project(":domain"))
-    implementation(project(":data:repository"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-
-    //lottie
-    implementation(libs.compose.lottie.animation)
-    //navigation
-    implementation(libs.navigation.compose)
     //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-
-    //Coil
-    implementation(libs.compose.coil)
+    //gson
+    implementation(libs.gson)
+    implementation(libs.retrofit.gson.converter)
     //Network
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
@@ -65,5 +53,4 @@ dependencies {
     implementation(libs.logging.interceptor)
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
-
 }

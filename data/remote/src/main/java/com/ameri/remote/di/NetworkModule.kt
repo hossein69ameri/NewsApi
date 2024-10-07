@@ -1,11 +1,8 @@
-package com.ameri.data.di
+package com.ameri.remote.di
 
 import android.app.Application
-import com.ameri.data.BASE_URL_THE_NEWS_API
-import com.ameri.data.CONNECTION_TIME
-import com.ameri.data.NAMED_PING
-import com.ameri.data.PING_INTERVAL
-import com.ameri.data.network.ApiServices
+import com.ameri.remote.*
+import com.ameri.remote.network.ApiServices
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

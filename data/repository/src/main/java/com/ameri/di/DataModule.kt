@@ -1,6 +1,6 @@
-package com.ameri.data.di
+package com.ameri.di
 
-import com.ameri.data.repository.NewsRepositoryImpl
+import com.ameri.repository.NewsRepositoryImpl
 import com.ameri.domain.repository.NewsRepository
 import dagger.Binds
 import dagger.Module

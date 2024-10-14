@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ameri.domain"
+    namespace = "com.ameri.repository"
     compileSdk = 34
 
     defaultConfig {
@@ -35,16 +35,23 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(project(":domain"))
     implementation(project(":data:remote"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //gson
-    implementation(libs.gson)
-    implementation(libs.retrofit.gson.converter)
     //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-
+    //gson
+    implementation(libs.gson)
+    implementation(libs.retrofit.gson.converter)
+    //Network
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.converter)
+    implementation(libs.logging.interceptor)
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
 }

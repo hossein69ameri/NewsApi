@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ameri.domain.models.ResponseData
+import com.ameri.domain.model.NewsData
 import com.ameri.presentation.ui.component.LoadingView
 import com.ameri.presentation.ui.component.PageIndicator
 import com.ameri.presentation.ui.home.food_section.FoodSection
@@ -37,7 +37,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun HomeScreen(viewModel: NewsViewModel? = hiltViewModel()) {
-    var list by remember { mutableStateOf(ResponseData()) }
+    var list by remember { mutableStateOf(NewsData()) }
     val pagerState = rememberPagerState(pageCount = { list.data?.size ?: 0 })
     var imageUrl by remember { mutableStateOf("") }
     var loading by remember { mutableStateOf(false) }

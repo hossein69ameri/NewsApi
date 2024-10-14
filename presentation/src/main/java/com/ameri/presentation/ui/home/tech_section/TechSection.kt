@@ -21,7 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.ameri.domain.models.ResponseData
+import com.ameri.domain.model.NewsData
 import com.ameri.presentation.ui.component.LoadingView
 import com.ameri.presentation.util.constant.TECHNOLOGIES
 import com.ameri.presentation.util.networkUtil.NetworkRequest
@@ -31,7 +31,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun TechSection(viewModel: NewsViewModel? = hiltViewModel()) {
-    var techList by remember { mutableStateOf<List<ResponseData.Data>>(emptyList()) }
+    var techList by remember { mutableStateOf<List<NewsData.Data>>(emptyList()) }
     var loading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Dispatchers.Main) {

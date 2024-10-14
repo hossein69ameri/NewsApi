@@ -14,7 +14,6 @@ import com.ameri.presentation.ui.splash.SplashScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    // other parameters
 ) {
     NavHost(
         modifier = modifier,

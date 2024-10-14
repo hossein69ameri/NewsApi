@@ -24,14 +24,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ameri.domain.models.ResponseData
+import com.ameri.domain.model.NewsData
 import com.ameri.presentation.util.asyncImagePainter
 import com.ameri.presentation.util.formatDate
 import com.ameri.presentation.util.theme.AntiFlashWhite
 import com.ameri.presentation.util.theme.CoolGrey
 
 @Composable
-fun SportItem(item: ResponseData.Data) {
+fun SportItem(item: NewsData.Data) {
     Box(
         modifier = Modifier
             .width(300.dp)
@@ -97,5 +97,5 @@ fun SportItem(item: ResponseData.Data) {
 @Preview
 @Composable
 fun SportItemPreview() {
-    SportItem(ResponseData.Data())
+    SportItem(NewsData.Data())
 }

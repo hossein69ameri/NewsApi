@@ -32,19 +32,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ameri.domain.model.NewsData
 import com.ameri.presentation.R
 import com.ameri.presentation.util.asyncImagePainter
 import com.ameri.presentation.util.formatDate
 import com.ameri.presentation.util.theme.AntiFlashWhite
 import com.ameri.presentation.util.theme.CoolGrey
-import com.ameri.remote.models.ResponseData
 
 
 @Composable
 fun TopSlider(
     pagerState: PagerState,
     imageUrl: String,
-    list: ResponseData
+    list: NewsData
 ) {
     var imageUrl1 = imageUrl
     Image(

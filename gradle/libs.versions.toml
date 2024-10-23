@@ -63,6 +63,12 @@ workRuntimeKtx = "2.9.1"
 #Gson
 gson = "2.10.1"
 gson-converter = "2.11.0"
+appcompat = "1.7.0"
+material = "1.12.0"
+
+#Room
+room = "2.5.2"
+
 
 ############################################################################################################################################################################
 ############################################################################################################################################################################
@@ -130,6 +136,14 @@ work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version
 #Gson
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson-converter" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
 
 
 ############################################################################################################################################################################

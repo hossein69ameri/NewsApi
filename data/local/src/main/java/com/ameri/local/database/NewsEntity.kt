@@ -2,8 +2,9 @@ package com.ameri.local.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.ameri.local.utils.NEWS_TABLE
 
-@Entity(tableName = "response_data")
+@Entity(tableName = NEWS_TABLE)
 data class NewsEntity(
     @PrimaryKey(autoGenerate = false)
     val uuid: String, // The primary key

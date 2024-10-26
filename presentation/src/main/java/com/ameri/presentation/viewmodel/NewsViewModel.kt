@@ -5,6 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.ameri.domain.model.NewsData
 import com.ameri.domain.repository.NewsRepository
 import com.ameri.presentation.util.networkUtil.NetworkRequest
+import com.ameri.remote.Foodies_CATEGORY
+import com.ameri.remote.SPORTS_CATEGORY
+import com.ameri.remote.Techs_CATEGORY
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,7 +23,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     fun getEverythingData() = viewModelScope.launch {
         _topStoriesState.value = NetworkRequest.Loading()
-        val data = repository.getTopStoriesData()
+        val data = repository.getData("top")
         if (data.data.isNullOrEmpty()) {
             _topStoriesState.value = NetworkRequest.Error("No Data")
         } else {
@@ -34,7 +37,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     fun getSportsData() = viewModelScope.launch {
         _sportsState.value = NetworkRequest.Loading()
-        val data = repository.getSportsData()
+        val data = repository.getData("all", category = SPORTS_CATEGORY)
         if (data.data.isNullOrEmpty()) {
             _sportsState.value = NetworkRequest.Error("No Data")
         } else {
@@ -48,7 +51,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     fun getFoodiesData() = viewModelScope.launch {
         _foodState.value = NetworkRequest.Loading()
-        val data = repository.getFoodiesData()
+        val data = repository.getData("all", category = Foodies_CATEGORY)
         if (data.data.isNullOrEmpty()) {
             _foodState.value = NetworkRequest.Error("No Data")
         } else {
@@ -62,7 +65,7 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
 
     fun getTechnologyData() = viewModelScope.launch {
         _techState.value = NetworkRequest.Loading()
-        val data = repository.getTechnologyData()
+        val data = repository.getData("all", category = Techs_CATEGORY)
         if (data.data.isNullOrEmpty()) {
             _techState.value = NetworkRequest.Error("No Data")
         } else {

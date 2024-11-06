@@ -10,9 +10,7 @@ import com.ameri.mapper.toRemoteNews
 import com.ameri.remote.network.ApiServices
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -64,34 +62,3 @@ class NewsRepositoryImpl @Inject constructor(
             }
         }
 }
-
-
-//class NewsRepositoryImpl @Inject constructor(
-//    private val apiServices: ApiServices,
-//    private val newsDao: NewsDao
-//) : NewsRepository {
-//
-//    override suspend fun getData(endpoint: String, category: String?): NewsData =
-//        withContext(Dispatchers.IO) {
-//            val categoryToUse = if (endpoint == "top") "top" else category!!
-//            val cachedNewsData = newsDao.loadNewsByCategory(categoryToUse)
-//                .firstOrNull()?.map { it.toNewsData() } ?: emptyList()
-//            val newsData = NewsData(data = cachedNewsData)
-//            CoroutineScope(Dispatchers.IO).launch {
-//                try {
-//                    val response = apiServices.getData(endpoint, category = category)
-//                    val freshNewsData = response.toRemoteNews()
-//                    freshNewsData.data?.let { newData ->
-//                        newsDao.deleteNewsByCategory(categoryToUse)
-//                        newData.forEach { newsItem ->
-//                            newsDao.saveNews(newsItem.toNewsEntity(categoryToUse))
-//                        }
-//                    }
-//                } catch (exception: Exception) {
-//                    Log.e("8383", "Error fetching from API: ${exception.message}")
-//                }
-//            }
-//            return@withContext newsData
-//        }
-//}
-

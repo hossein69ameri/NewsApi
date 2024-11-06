@@ -6,8 +6,8 @@ import com.ameri.local.utils.NEWS_TABLE
 
 @Entity(tableName = NEWS_TABLE)
 data class NewsEntity(
-    @PrimaryKey(autoGenerate = false)
-    val uuid: String, // The primary key
+    @PrimaryKey
+    val uuid: String,
     val title: String?,
     val description: String?,
     val keywords: String?,
@@ -17,5 +17,6 @@ data class NewsEntity(
     val language: String?,
     val publishedAt: String?,
     val source: String?,
-    val locale: String?
+    val locale: String?,
+    val table: String?
 )

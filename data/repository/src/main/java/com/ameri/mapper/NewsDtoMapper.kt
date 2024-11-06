@@ -4,11 +4,11 @@ import com.ameri.domain.model.NewsData
 import com.ameri.remote.models.ResponseData
 
 
-fun ResponseData.toNews(): NewsData = NewsData(
-    data = this.data?.map { it.toNewsDataItem() }
+fun ResponseData.toRemoteNews(): NewsData = NewsData(
+    data = this.data?.map { it.toRemoteNewsDataItem() }
 )
 
-fun ResponseData.Data.toNewsDataItem(): NewsData.Data = NewsData.Data(
+fun ResponseData.Data.toRemoteNewsDataItem(): NewsData.Data = NewsData.Data(
     uuid = this.uuid,
     title = this.title,
     description = this.description,

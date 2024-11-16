@@ -43,6 +43,7 @@ fun HomeScreen(viewModel: NewsViewModel? = hiltViewModel()) {
     var loading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
+        viewModel?.refreshData()
         viewModel?.getEverythingData()
         viewModel?.getSportsData()
         viewModel?.getFoodiesData()

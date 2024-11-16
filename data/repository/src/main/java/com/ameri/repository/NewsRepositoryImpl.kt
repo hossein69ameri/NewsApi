@@ -1,18 +1,16 @@
 package com.ameri.repository
 
-import android.util.Log
 import com.ameri.domain.model.NewsData
 import com.ameri.domain.repository.NewsRepository
 import com.ameri.local.database.NewsDao
 import com.ameri.mapper.toNewsData
 import com.ameri.mapper.toNewsEntity
 import com.ameri.mapper.toRemoteNews
+import com.ameri.remote.ALL
+import com.ameri.remote.TOP
 import com.ameri.remote.network.ApiServices
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class NewsRepositoryImpl @Inject constructor(
@@ -20,45 +18,28 @@ class NewsRepositoryImpl @Inject constructor(
     private val newsDao: NewsDao
 ) : NewsRepository {
 
-    override suspend fun getData(endpoint: String, category: String?): NewsData =
-        withContext(Dispatchers.IO) {
-            val categoryToUse = if (endpoint == "top") "top" else category!!
-            val cachedNewsData = newsDao.loadNewsByCategory(categoryToUse)
-                .firstOrNull()?.map { it.toNewsData() } ?: emptyList()
-
-            return@withContext if (cachedNewsData.isEmpty()) {
-                try {
-                    val response = apiServices.getData(endpoint, category = category)
-                    val freshNewsData = response.toRemoteNews()
-
-                    freshNewsData.data?.let { newData ->
-                        newData.forEach { newsItem ->
-                            newsDao.saveNews(newsItem.toNewsEntity(categoryToUse))
-                        }
-                    }
-
-                    freshNewsData
-                } catch (exception: Exception) {
-                    NewsData(data = emptyList())
+    override suspend fun getData(endpoint: String, category: String?): NewsData {
+        val categoryToUse = if (endpoint == TOP) TOP else category ?: ALL
+        try {
+            val response = apiServices.getData(endpoint, category = category)
+            val freshNewsData = response.toRemoteNews()
+            freshNewsData.data?.let { newData ->
+                newsDao.deleteNewsByCategory(categoryToUse)
+                newData.forEach { newsItem ->
+                    newsDao.saveNews(newsItem.toNewsEntity(categoryToUse))
                 }
-            } else {
-                val newsData = NewsData(data = cachedNewsData)
-                CoroutineScope(Dispatchers.IO).launch {
-                    try {
-                        val response = apiServices.getData(endpoint, category = category)
-                        val freshNewsData = response.toRemoteNews()
-
-                        freshNewsData.data?.let { newData ->
-                            newsDao.deleteNewsByCategory(categoryToUse)
-                            newData.forEach { newsItem ->
-                                newsDao.saveNews(newsItem.toNewsEntity(categoryToUse))
-                            }
-                        }
-                    } catch (exception: Exception) {
-                        Log.e("NewsRepository", "Error fetching data from API: ${exception.message}")
-                    }
-                }
-                newsData
             }
+            return freshNewsData
+        } catch (exception: Exception) {
+            return NewsData(data = emptyList())
         }
+    }
+
+
+    override suspend fun loadNewsByCategory(endpoint: String, category: String?): Flow<List<NewsData.Data>> {
+        val categoryToUse = if (endpoint == TOP) TOP else category ?: ALL
+        return newsDao.loadNewsByCategory(categoryToUse).map { newsEntityList ->
+            newsEntityList.map { it.toNewsData() }
+        }
+    }
 }

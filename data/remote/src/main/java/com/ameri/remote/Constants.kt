@@ -20,3 +20,7 @@ const val DEFAULT_LANGUAGE = "en"
 const val SPORTS_CATEGORY = "sports"
 const val Foodies_CATEGORY = "food"
 const val Techs_CATEGORY = "tech"
+
+//Other
+const val ALL = "all"
+const val TOP = "top"
